@@ -5,6 +5,8 @@ const { connectDb } = require("./connection");
 const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
 const taskRoutes = require("./routes/taskRoutes");
+const aiRoutes = require("./routes/ai"); 
+
 
 // mongoose
 //   .connect(process.env.MONGO_URI)
@@ -28,6 +30,10 @@ app.use("/api/users", userRoutes);
 
 //task CRUD
 app.use("/api/task", taskRoutes);
+
+//AI routs
+app.use("/api/ai", aiRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
